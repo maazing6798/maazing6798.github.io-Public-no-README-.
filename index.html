@@ -148,6 +148,10 @@
   .contact .links a,.copy{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:var(--white);border:0;border-radius:16px;padding:.9rem 1.1rem;color:var(--ink);text-decoration:none;font-weight:700;width:100%;text-align:left;transition:transform .15s}
   .contact .links a:hover,.copy:hover{transform:translateX(4px)}
   .contact .links small{font-weight:500;color:var(--muted)}
+  .about-side h3{font-size:1.15rem;margin:3.2rem 0 1rem}
+  .contact-wide{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+  .contact-wide p{margin:0}
+  @media (max-width:920px){.contact-wide{grid-template-columns:1fr}.about-side h3{margin-top:0}}
   footer{padding:0 0 2.5rem;color:var(--muted);font-size:.9rem}
 
   @media (max-width:920px){
@@ -187,7 +191,7 @@
       <p class="lede">I'm a Business Analyst with 6+ years across retail, e-commerce, healthcare and entertainment. I find out what people really need, then help teams build it.</p>
       <div class="actions">
         <a class="btn btn-lemon" href="#work">See my work</a>
-        <a class="btn btn-ghost" href="#about">Get in touch</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
     </div>
 
@@ -261,16 +265,10 @@
         <h2>Hi, I'm Maaz Sharieff</h2>
         <p style="margin-top:1rem">I've spent six years working between the people with the problem and the teams who build the fix. I like untangling the messy bits and asking the question nobody has asked yet.</p>
         <p>Outside work you'll probably find me [your hobby here].</p>
-        <ul class="tags"><li>Retail</li><li>E-commerce</li><li>Healthcare</li><li>Entertainment</li><li>Jira</li><li>Confluence</li><li>Miro</li><li>SQL</li><li>Power BI</li></ul>
       </div>
-      <div class="contact" id="contact">
-        <h2>Let's talk</h2>
-        <p>Email is the quickest way to reach me.</p>
-        <div class="links">
-          <button class="copy" id="copy" data-email="maaz6798@gmail.com">Email <small id="copy-label">maaz6798@gmail.com · copy</small></button>
-          <a href="https://linkedin.com/in/your-profile">LinkedIn <small>/in/your-profile</small></a>
-          <a href="https://github.com/your-username">GitHub <small>@your-username</small></a>
-        </div>
+      <div class="about-side">
+        <h3>Industries and tools</h3>
+        <ul class="tags"><li>Retail</li><li>E-commerce</li><li>Healthcare</li><li>Entertainment</li><li>Jira</li><li>Confluence</li><li>Miro</li><li>SQL</li><li>Power BI</li></ul>
       </div>
     </div>
   </section>
@@ -344,6 +342,19 @@
     </div>
   </section>
 
+  <section id="contact-sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact contact-wide" id="contact">
+        <div><h2>Let's talk</h2>
+        <p>I'm open to BA roles in Melbourne, hybrid or remote. Email is the quickest way to reach me.</p></div>
+        <div class="links">
+          <button class="copy" id="copy" data-email="maaz6798@gmail.com">Email <small id="copy-label">maaz6798@gmail.com · copy</small></button>
+          <a href="https://linkedin.com/in/your-profile">LinkedIn <small>/in/your-profile</small></a>
+          <a href="https://github.com/your-username">GitHub <small>@your-username</small></a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer><div class="wrap">© 2026 Maaz Sharieff</div></footer>
