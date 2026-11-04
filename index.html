@@ -3,182 +3,152 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Name · Senior Business Analyst</title>
-<meta name="description" content="Senior Business Analyst with 6+ years across retail, e-commerce, healthcare and entertainment. Case studies, approach and contact details.">
+<title>Your Name · Business Analyst</title>
+<meta name="description" content="Business Analyst with 6+ years across retail, e-commerce, healthcare and entertainment.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14213D;        /* deep navy: text, structure */
-    --slate:#5B6472;      /* secondary text */
-    --paper:#F7F8F5;      /* page */
-    --board:#FFFFFF;      /* whiteboard surface */
-    --rule:#D9DDE3;       /* lines */
-    --note:#F7D85A;       /* sticky-note yellow: the one bold thing */
-    --note-edge:#E7C43C;
-    --link:#1D5FA8;       /* links / focus */
-    --sans:"Schibsted Grotesk", system-ui, sans-serif;
-    --hand:"Caveat", "Segoe Print", cursive;
-    --measure:68ch;
+    --ink:#17302A;      /* deep green-black: text */
+    --muted:#5D6F69;    /* secondary text */
+    --green:#1F6F5C;    /* primary */
+    --mint:#E4F2EC;     /* soft section band */
+    --butter:#FFE59A;   /* warm highlight */
+    --white:#FFFFFF;
+    --line:#D5E4DE;
+    --display:"Bricolage Grotesque", "Trebuchet MS", sans-serif;
+    --body:"Figtree", system-ui, sans-serif;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-  a{color:var(--link);text-underline-offset:.18em;text-decoration-thickness:1px}
-  a:hover{text-decoration-thickness:2px}
-  :focus-visible{outline:3px solid var(--link);outline-offset:3px;border-radius:4px}
-  img,svg{max-width:100%;display:block}
-  .wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
-  .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:10}
-  .skip:focus{left:1rem;top:1rem}
+  body{margin:0;background:var(--white);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.02em;margin:0}
+  a{color:var(--green)}
+  :focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
+  .wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+  .skip{position:absolute;left:-999px}
+  .skip:focus{left:1rem;top:1rem;background:var(--ink);color:#fff;padding:.5rem 1rem;border-radius:8px;z-index:9}
 
-  /* ---------- header ---------- */
-  header.site{padding:1.25rem 0;border-bottom:1px solid var(--rule)}
-  header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-  .brand{font-weight:800;font-size:1.05rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
-  .brand span{font-weight:500;color:var(--slate)}
-  nav.site ul{list-style:none;display:flex;gap:1.5rem;margin:0;padding:0;flex-wrap:wrap}
-  nav.site a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
-  nav.site a:hover{text-decoration:underline}
+  /* header */
+  header{padding:1.4rem 0}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .brand{font:700 1.15rem var(--display);color:var(--ink);text-decoration:none}
+  nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0}
+  nav a{color:var(--ink);text-decoration:none;font-weight:500}
+  nav a:hover{color:var(--green)}
 
-  /* ---------- hero ---------- */
-  .hero{padding:4.5rem 0 4rem}
-  .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:3.5rem;align-items:center}
-  .hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem);line-height:1.05;letter-spacing:-.035em;font-weight:800;margin:0 0 1.25rem;max-width:14ch}
-  .hero p.lede{font-size:1.2rem;color:var(--slate);max-width:44ch;margin:0 0 2rem}
+  /* buttons */
+  .btn{display:inline-block;padding:.85rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;transition:background .15s,transform .15s}
+  .btn-main{background:var(--green);color:#fff}
+  .btn-main:hover{background:#185A4A}
+  .btn-soft{background:var(--mint);color:var(--ink)}
+  .btn-soft:hover{background:#D3EADF}
+  @media (prefers-reduced-motion:no-preference){.btn:active{transform:scale(.97)}}
+
+  /* hero */
+  .hero{padding:4rem 0 5rem}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center}
+  .hello{font:600 1rem var(--body);color:var(--green);margin:0 0 1rem}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;max-width:15ch}
+  .hero p.lede{font-size:1.2rem;color:var(--muted);max-width:42ch;margin:1.4rem 0 2rem}
   .actions{display:flex;gap:.75rem;flex-wrap:wrap}
-  .btn{display:inline-block;padding:.8rem 1.25rem;border-radius:8px;font-weight:600;text-decoration:none;font-size:1rem;border:2px solid var(--ink)}
-  .btn.primary{background:var(--ink);color:#fff}
-  .btn.primary:hover{background:#22325A;border-color:#22325A}
-  .btn.ghost{color:var(--ink);background:transparent}
-  .btn.ghost:hover{background:var(--ink);color:#fff}
 
-  /* the whiteboard */
-  .board{margin:0;position:relative;background:var(--board);border:1px solid var(--rule);border-radius:14px;padding:2rem 1.5rem 1.5rem;
-         background-image:radial-gradient(circle,#E3E7EC 1px,transparent 1.2px);background-size:22px 22px}
-  .board .caption{font:500 .85rem var(--sans);color:var(--slate);margin:0 0 1.1rem}
-  .flow{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem 2.8rem;position:relative}
-  .note{position:relative;background:var(--note);border-bottom:3px solid var(--note-edge);padding:.9rem 1rem 1rem;min-height:128px;
-        box-shadow:0 1px 0 rgba(20,33,61,.08),0 8px 14px -10px rgba(20,33,61,.35);font-family:var(--hand);color:#2A2A1F}
-  .note:nth-child(1){transform:rotate(-2deg)}
-  .note:nth-child(2){transform:rotate(1.5deg)}
-  .note:nth-child(3){transform:rotate(1deg)}
-  .note:nth-child(4){transform:rotate(-1.5deg)}
-  .note b{display:block;font-family:var(--sans);font-size:.78rem;font-weight:700;color:#5C4E10;margin-bottom:.15rem}
-  .note .big{display:block;font-size:2.1rem;line-height:1;font-weight:700}
-  .note .small{display:block;font-size:1.3rem;line-height:1.15;margin-top:.3rem}
-  .note::after{position:absolute;font:700 1.9rem/1 var(--hand);color:var(--ink);pointer-events:none}
-  .note:nth-child(1)::after,.note:nth-child(3)::after{content:"\2192";right:-2.15rem;top:50%;translate:0 -50%}
-  .note:nth-child(2)::after{content:"\2199";left:-1.9rem;bottom:-2.1rem}
-  .board .foot{margin:1.4rem 0 0;font:500 .85rem var(--sans);color:var(--slate)}
-  .board .foot a{font-weight:600}
-
+  /* trace card: one requirement followed from need to test */
+  .trace{background:var(--mint);border-radius:28px;padding:1.75rem}
+  .trace p.cap{margin:0 0 1rem;font-size:.92rem;color:var(--muted)}
+  .trace ol{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;position:relative}
+  .trace li{background:var(--white);border-radius:16px;padding:.9rem 1.1rem;display:grid;grid-template-columns:auto 1fr;gap:.2rem .9rem;align-items:baseline}
+  .trace .tag{font:700 .8rem var(--display);background:var(--butter);color:var(--ink);padding:.15rem .55rem;border-radius:999px;grid-row:span 2;align-self:center}
+  .trace .what{font-weight:600;line-height:1.35}
+  .trace .kind{font-size:.85rem;color:var(--muted)}
+  .trace li.done .tag{background:var(--green);color:#fff}
   @media (prefers-reduced-motion:no-preference){
-    .note{animation:stick .55s cubic-bezier(.2,.9,.3,1.25) both}
-    .note:nth-child(1){animation-delay:.15s}.note:nth-child(2){animation-delay:.45s}
-    .note:nth-child(3){animation-delay:.75s}.note:nth-child(4){animation-delay:1.05s}
-    @keyframes stick{from{opacity:0;translate:0 -14px;scale:1.04}to{opacity:1;translate:0 0;scale:1}}
+    .trace li{animation:up .5s cubic-bezier(.2,.8,.3,1) both}
+    .trace li:nth-child(2){animation-delay:.15s}.trace li:nth-child(3){animation-delay:.3s}.trace li:nth-child(4){animation-delay:.45s}
+    @keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   }
 
-  /* ---------- sections ---------- */
-  section.block{padding:4.5rem 0;border-top:1px solid var(--rule)}
-  h2{font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.025em;line-height:1.15;margin:0 0 .6rem;font-weight:800}
-  .intro{color:var(--slate);max-width:var(--measure);margin:0 0 2.5rem;font-size:1.1rem}
-  h3{font-size:1.25rem;letter-spacing:-.015em;margin:0 0 .5rem;line-height:1.3}
+  /* sections */
+  section{padding:5rem 0}
+  h2{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:800;margin-bottom:.75rem}
+  .sub{color:var(--muted);max-width:56ch;margin:0 0 2.5rem;font-size:1.1rem}
 
-  /* featured case study */
-  .case{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;background:var(--board);border:1px solid var(--rule);border-radius:14px;padding:2.5rem}
-  .case h3{font-size:1.7rem;letter-spacing:-.025em;margin-bottom:.35rem}
-  .case .meta{color:var(--slate);font-size:.95rem;margin:0 0 1.5rem}
-  .case dl{margin:0 0 1.75rem;display:grid;gap:1.1rem}
-  .case dt{font-weight:700;font-size:.95rem}
-  .case dd{margin:.15rem 0 0;color:#2F3B52;max-width:58ch}
-  .results{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:0 0 1.75rem;padding:1.1rem 0;border-block:1px solid var(--rule)}
-  .results div{font-size:.88rem;color:var(--slate);line-height:1.35}
-  .results strong{display:block;font-size:1.55rem;color:var(--ink);letter-spacing:-.02em;line-height:1.1;margin-bottom:.2rem}
-  .chart h4{font-size:1rem;margin:0 0 .25rem}
-  .chart p{font-size:.88rem;color:var(--slate);margin:0 0 1rem}
-  .bars{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
-  .bars li{display:grid;grid-template-columns:9.5rem 1fr 3.2rem;align-items:center;gap:.6rem;font-size:.88rem}
-  .bars .track{height:22px;background:#EEF0F3;border-radius:4px;overflow:hidden}
-  .bars .track,.bars .fill{display:block}
-  .bars .fill{height:100%;background:var(--ink);border-radius:4px}
-  .bars .fill.r2{background:var(--link)}
-  .bars .pct{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
-  .chart .legend{margin-top:.9rem;font-size:.82rem;color:var(--slate);display:flex;gap:1.1rem;flex-wrap:wrap}
-  .chart .legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:2px;vertical-align:-1px;margin-right:.35rem}
-  .deliverables{margin-top:2rem}
-  .deliverables h4{font-size:1rem;margin:0 0 .6rem}
-  .deliverables ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.45rem}
-  .deliverables li{font-size:.85rem;padding:.3rem .65rem;border:1px solid var(--rule);border-radius:999px;color:#2F3B52;background:var(--paper)}
+  /* featured */
+  .band{background:var(--mint)}
+  .feature{background:var(--white);border-radius:28px;padding:2.75rem;display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:start}
+  .feature .label{display:inline-block;font-size:.88rem;font-weight:600;color:var(--green);margin-bottom:.6rem}
+  .feature h3{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:800;margin-bottom:1rem}
+  .feature p{margin:0 0 1rem;color:#33463F;max-width:52ch}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.75rem 0 2rem}
+  .nums div{background:var(--mint);border-radius:16px;padding:1rem;font-size:.9rem;color:var(--muted);line-height:1.35}
+  .nums strong{display:block;font:800 1.45rem var(--display);color:var(--ink);margin-bottom:.25rem}
+  .products{display:grid;gap:.75rem}
+  .products div{border:1.5px solid var(--line);border-radius:18px;padding:1.1rem 1.25rem}
+  .products h4{font:700 1.05rem var(--display);margin:0 0 .2rem}
+  .products p{margin:0;font-size:.95rem;color:var(--muted)}
 
-  /* upcoming projects */
-  .more{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
-  .more article{padding:1.5rem 0 0;border-top:3px solid var(--ink)}
-  .more .ind{font-size:.88rem;color:var(--slate);margin:0 0 .4rem;font-weight:500}
-  .more p{margin:0 0 .8rem;color:#2F3B52}
-  .more .status{font-size:.85rem;color:var(--slate);font-style:italic}
+  /* more work */
+  .more{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+  .more article{background:rgba(255,255,255,.6);border-radius:20px;padding:1.4rem}
+  .more .ind{font-size:.85rem;color:var(--green);font-weight:600;margin:0 0 .35rem}
+  .more h3{font-size:1.15rem;font-weight:700;margin-bottom:.4rem}
+  .more p{margin:0;font-size:.92rem;color:var(--muted)}
 
-  /* approach: this really is a sequence, so it's numbered */
-  ol.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s;border-top:1px solid var(--rule)}
-  ol.steps li{counter-increment:s;padding:1.5rem 1.25rem 0 0;position:relative}
-  ol.steps li::before{content:counter(s);display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;font-size:.9rem;margin:-2.5rem 0 1rem}
-  ol.steps h3{font-size:1.1rem}
-  ol.steps p{margin:0;color:#2F3B52;font-size:.97rem}
-  ol.steps small{display:block;margin-top:.6rem;color:var(--slate);font-size:.85rem}
+  /* approach: a real sequence */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;list-style:none;margin:0;padding:0;counter-reset:s}
+  .steps li{counter-increment:s}
+  .steps li::before{content:counter(s);display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--butter);font:800 1rem var(--display);margin-bottom:.9rem}
+  .steps h3{font-size:1.15rem;font-weight:700;margin-bottom:.3rem}
+  .steps p{margin:0;font-size:.95rem;color:var(--muted)}
 
-  /* industries */
-  .industries{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 3.5rem}
-  .industries h3{display:flex;align-items:baseline;gap:.6rem}
-  .industries p{margin:0;color:#2F3B52;max-width:52ch}
-  .toolkit{margin-top:3.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-  .toolkit h3{font-size:1rem}
-  .toolkit p{margin:0;color:#2F3B52;font-size:.97rem}
+  /* about */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  .about p{margin:0 0 1rem;max-width:50ch}
+  .pills{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0 0 2rem;padding:0}
+  .pills li{background:var(--white);border-radius:999px;padding:.4rem .95rem;font-weight:500;font-size:.95rem}
+  .about h3{font-size:1.05rem;font-weight:700;margin:0 0 .75rem}
+  .tools{margin:0;color:var(--muted)}
 
   /* contact */
-  .contact{background:var(--ink);color:#fff;border-top:none}
-  .contact .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:end}
-  .contact h2{color:#fff;max-width:18ch}
-  .contact p{color:#C9D1DE;max-width:50ch;margin:0}
-  .contact ul{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
-  .contact li{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;font-size:1.02rem;padding-bottom:.9rem;border-bottom:1px solid #2C3A5C}
-  .contact li span{color:#9AA7BD;font-size:.9rem}
-  .contact a{color:#fff}
-  .contact :focus-visible{outline-color:var(--note)}
-  footer{background:var(--ink);color:#9AA7BD;font-size:.85rem;padding:0 0 2.5rem}
+  .contact{background:var(--ink);color:#fff;border-radius:32px;padding:3.5rem;display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:center}
+  .contact h2{color:#fff}
+  .contact p{color:#BFD3CB;margin:0;max-width:44ch}
+  .contact .links{display:grid;gap:.6rem}
+  .contact .links a{display:flex;justify-content:space-between;gap:1rem;background:rgba(255,255,255,.08);border-radius:14px;padding:.9rem 1.1rem;color:#fff;text-decoration:none}
+  .contact .links a:hover{background:rgba(255,255,255,.14)}
+  .contact .links span{color:#BFD3CB;font-size:.9rem}
+  .contact :focus-visible{outline-color:var(--butter)}
+  #contact{padding-bottom:2rem}
+  footer{padding:0 0 2.5rem;color:var(--muted);font-size:.9rem}
 
-  /* ---------- responsive ---------- */
-  @media (max-width:960px){
-    .hero .wrap,.case,.contact .wrap{grid-template-columns:1fr}
-    .hero{padding-top:3rem}
-    .more,.toolkit{grid-template-columns:1fr 1fr}
-    ol.steps{grid-template-columns:1fr 1fr;row-gap:2.5rem}
+  @media (max-width:900px){
+    .hero .wrap,.feature,.about,.contact{grid-template-columns:1fr}
+    .hero .wrap{gap:2.5rem}
+    .steps{grid-template-columns:1fr 1fr}
+    .more{grid-template-columns:1fr}
   }
-  @media (max-width:620px){
-    .flow{grid-template-columns:1fr;gap:1.4rem}
-    .note::after{display:none}
-    .note{transform:none!important;min-height:0}
-    .results{grid-template-columns:1fr}
-    .more,.toolkit,.industries,ol.steps{grid-template-columns:1fr}
-    .case{padding:1.5rem}
-    .bars li{grid-template-columns:7.5rem 1fr 2.8rem}
-    nav.site ul{gap:1rem}
+  @media (max-width:560px){
+    nav ul{gap:1rem}
+    .hero{padding:2rem 0 3.5rem}
+    section{padding:3.5rem 0}
+    .feature,.contact{padding:1.6rem;border-radius:22px}
+    .nums{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
   }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site">
+<header>
   <div class="wrap">
-    <a class="brand" href="#top">Your Name <span>· Senior Business Analyst</span></a>
-    <nav class="site" aria-label="Main">
+    <a class="brand" href="#top">Your Name</a>
+    <nav aria-label="Main">
       <ul>
         <li><a href="#work">Work</a></li>
-        <li><a href="#approach">Approach</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -186,146 +156,110 @@
 </header>
 
 <main id="main">
-  <section class="hero" id="top">
+  <div class="hero" id="top">
     <div class="wrap">
       <div>
-        <h1>I find out why things aren't working, and what fixing them is worth.</h1>
-        <p class="lede">Senior Business Analyst with 6+ years across retail, e-commerce, healthcare and entertainment. I turn messy problems into clear requirements, back them with data, and stay through delivery until the benefits are measured.</p>
+        <p class="hello">Hi, I'm Your Name, a Business Analyst in Melbourne</p>
+        <h1>I turn messy problems into requirements teams can build.</h1>
+        <p class="lede">Six years across retail, e-commerce, healthcare and entertainment. I listen to the people involved, back decisions with data, and stay until the results are measured.</p>
         <div class="actions">
-          <a class="btn primary" href="#work">See my case studies</a>
-          <a class="btn ghost" href="#contact">Get in touch</a>
+          <a class="btn btn-main" href="#work">See my work</a>
+          <a class="btn btn-soft" href="#contact">Say hello</a>
         </div>
       </div>
 
-      <figure class="board" aria-labelledby="board-cap">
-        <p class="caption" id="board-cap">From my latest case study: one problem, traced from start to finish</p>
-        <div class="flow">
-          <div class="note"><b>Problem</b><span class="big">20%</span><span class="small">of club fees still unpaid at round 1</span></div>
-          <div class="note"><b>Analysis</b><span class="big">220 hrs</span><span class="small">of volunteer admin a season, traced to 8 pain points</span></div>
-          <div class="note"><b>Requirements</b><span class="big">28 + 19</span><span class="small">requirements and user stories, all traced to tests</span></div>
-          <div class="note"><b>Target</b><span class="big">95%</span><span class="small">of fees paid by round 1, and 140 hours handed back</span></div>
-        </div>
-        <p class="foot">Read the full story in <a href="#case-club">Club platform for a junior soccer club</a>.</p>
+      <figure class="trace" aria-labelledby="trace-cap" style="margin:0">
+        <p class="cap" id="trace-cap">One requirement from my latest project, followed from need to test:</p>
+        <ol>
+          <li><span class="tag">Need</span><span class="what">Coaches want to message older players</span><span class="kind">Raised in a coaches' focus group</span></li>
+          <li><span class="tag">Rule</span><span class="what">Messages go to parents only</span><span class="kind">Agreed with the child safety officer</span></li>
+          <li><span class="tag">Story</span><span class="what">Team announcements reach every parent, and no player</span><span class="kind">US-303, with acceptance criteria</span></li>
+          <li class="done"><span class="tag">Test</span><span class="what">No message option on a player's profile</span><span class="kind">TC-21, ready for UAT</span></li>
+        </ol>
       </figure>
     </div>
-  </section>
+  </div>
 
-  <section class="block" id="work">
+  <section class="band" id="work">
     <div class="wrap">
-      <h2>Case studies</h2>
-      <p class="intro">Each one follows a full piece of work end to end, with the real artefacts: business case, process maps, requirements, analysis and test plans. Company names and data are fictional so that no client information is shared.</p>
+      <h2>Featured work</h2>
+      <p class="sub">Full case studies with the real artefacts behind them. Names and data are fictional to protect client confidentiality.</p>
 
-      <article class="case" id="case-club">
+      <article class="feature">
         <div>
-          <h3>Club platform for a junior soccer club</h3>
-          <p class="meta">Community sport · Agency-side BA · Website, admin portal and mobile app</p>
-          <dl>
-            <div><dt>The problem</dt><dd>A local club for under-14s, with 65 players, 6 teams and only volunteers to run it, managed everything with a spreadsheet, bank transfers and WhatsApp groups. A fifth of fees were unpaid at round 1, and no one could confirm at a glance that every coach had a current Working With Children Check.</dd></div>
-            <div><dt>What I did</dt><dd>I gathered requirements from the committee, coaches and parents, then worked with my company's product manager, architect, designer, developers and testers. Together we are delivering a public website, a committee admin portal, and one app with separate views for parents, coaches and players.</dd></div>
-            <div><dt>The trade-off I resolved</dt><dd>Coaches wanted group chat with older players, but the child-safe policy doesn't allow it. We agreed that messages go to parents only and that players get a view-only profile their parent controls. These rules are now built into the product.</dd></div>
-          </dl>
-          <div class="results" aria-label="Targets for the 2027 season">
-            <div><strong>80% → 95%</strong>fees paid by round 1</div>
-            <div><strong>220 → 80</strong>volunteer admin hours a season</div>
-            <div><strong>100%</strong>coaches with a verified WWCC, enforced</div>
+          <span class="label">Community sport · Agency-side BA</span>
+          <h3>A website and app for a local junior soccer club</h3>
+          <p>A club for under-14s, with 65 players and only volunteers to run it, was managing everything with spreadsheets, bank transfers and WhatsApp groups. A fifth of fees were still unpaid at round 1.</p>
+          <p>I gathered requirements from the committee, coaches and parents, and worked with my company's design and development teams to deliver it.</p>
+          <div class="nums">
+            <div><strong>80→95%</strong>fees paid by round 1</div>
+            <div><strong>220→80</strong>volunteer hours a season</div>
+            <div><strong>100%</strong>coaches safety-checked</div>
           </div>
-          <a class="btn primary" href="https://github.com/your-username/local-soccer-club-platform-ba-case-study">View the full case study on GitHub</a>
+          <a class="btn btn-main" href="https://github.com/your-username/local-soccer-club-platform-ba-case-study">Read the case study</a>
         </div>
-
-        <div>
-          <div class="chart">
-            <h4>Where the volunteer hours went</h4>
-            <p>Admin hours per season, from a 3-week time diary (2026)</p>
-            <ul class="bars">
-              <li><span>Coaches (6)</span><span class="track"><span class="fill r2" style="width:100%"></span></span><span class="pct">120</span></li>
-              <li><span>Registrar</span><span class="track"><span class="fill" style="width:33%"></span></span><span class="pct">40</span></li>
-              <li><span>Treasurer</span><span class="track"><span class="fill" style="width:21%"></span></span><span class="pct">25</span></li>
-              <li><span>Website &amp; social</span><span class="track"><span class="fill" style="width:17%"></span></span><span class="pct">20</span></li>
-              <li><span>Duty roster</span><span class="track"><span class="fill r2" style="width:12.5%"></span></span><span class="pct">15</span></li>
-            </ul>
-            <div class="legend"><span><i style="background:var(--ink)"></i>Addressed in Release 1 (Nov 2026)</span><span><i style="background:var(--link)"></i>Addressed in Release 2 (Mar 2027)</span></div>
-          </div>
-          <div class="deliverables">
-            <h4>What's in the repo</h4>
-            <ul>
-              <li>Project charter and options</li><li>Stakeholder map and RACI</li><li>Personas and journeys</li>
-              <li>As-is and to-be process maps</li><li>Roles and permissions</li><li>BRD with child-safety rules</li>
-              <li>User stories with Gherkin</li><li>Backlog and traceability</li><li>SQL and Python analysis</li>
-              <li>UAT plan and defects</li><li>Change and benefits plan</li>
-            </ul>
-          </div>
+        <div class="products" aria-label="What we're building">
+          <div><h4>Club website</h4><p>News, fixtures and a simple way to join.</p></div>
+          <div><h4>Committee portal</h4><p>Registrations, fees, teams and safety checks in one place.</p></div>
+          <div><h4>Member app</h4><p>Parents register, pay and confirm availability. Coaches see who's playing. Players get a simple view their parent controls.</p></div>
         </div>
       </article>
 
       <div class="more">
-        <article>
-          <p class="ind">Healthcare</p>
-          <h3>Outpatient referral and booking redesign</h3>
-          <p>Cutting the time from GP referral to first appointment, with process maps, waiting-list KPIs and privacy requirements.</p>
-          <p class="status">Case study in progress</p>
-        </article>
-        <article>
-          <p class="ind">Entertainment</p>
-          <h3>Streaming subscription churn reduction</h3>
-          <p>Finding which subscribers leave and why, then building the business case for retention features and pricing changes.</p>
-          <p class="status">Case study in progress</p>
-        </article>
-        <article>
-          <p class="ind">Retail</p>
-          <h3>Click-and-collect stock accuracy</h3>
-          <p>Tracing why online orders get cancelled for stock the store doesn't have, and specifying the inventory fixes.</p>
-          <p class="status">Case study in progress</p>
-        </article>
+        <article><p class="ind">Healthcare · Coming soon</p><h3>Faster outpatient referrals</h3><p>Cutting the wait from GP referral to first appointment.</p></article>
+        <article><p class="ind">Entertainment · Coming soon</p><h3>Fewer streaming cancellations</h3><p>Why subscribers leave, and what would keep them.</p></article>
+        <article><p class="ind">Retail · Coming soon</p><h3>Click and collect that works</h3><p>Fixing cancelled orders for stock stores don't have.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="block" id="approach">
+  <section id="approach">
     <div class="wrap">
       <h2>How I work</h2>
-      <p class="intro">The same five stages, whatever the industry. Every requirement traces back to an objective and forward to a test, so nothing gets built that nobody needs.</p>
+      <p class="sub">The same five steps, whatever the industry.</p>
       <ol class="steps">
-        <li><h3>Discover</h3><p>Talk to the people involved and the customers affected, then agree what success looks like.</p><small>Interviews, surveys, workshops</small></li>
-        <li><h3>Analyse</h3><p>Map how things work today, find the root causes and put a dollar value on each one.</p><small>Process maps, SQL, root cause analysis</small></li>
-        <li><h3>Specify</h3><p>Write requirements the team can build and test, prioritised against value.</p><small>BRDs, user stories, acceptance criteria</small></li>
-        <li><h3>Deliver</h3><p>Work with the team through build and UAT, triage defects and get sign-off.</p><small>UAT plans, defect triage, go/no-go</small></li>
-        <li><h3>Measure</h3><p>Check the benefits actually landed, and watch the guardrails.</p><small>KPI tracking, A/B tests, retros</small></li>
+        <li><h3>Listen</h3><p>Talk to the people involved and agree what success looks like.</p></li>
+        <li><h3>Analyse</h3><p>Map how things work today and find the real causes.</p></li>
+        <li><h3>Define</h3><p>Write requirements and stories the team can build and test.</p></li>
+        <li><h3>Deliver</h3><p>Work with the team through build, testing and sign-off.</p></li>
+        <li><h3>Measure</h3><p>Check the results actually landed.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="block" id="experience">
-    <div class="wrap">
-      <h2>Where I've worked</h2>
-      <p class="intro">Six years of business analysis across four industries, each with its own constraints.</p>
-      <div class="industries">
-        <div><h3>Retail</h3><p>Store and online operations, inventory, click and collect, loyalty programs. Peak trading code freezes and many stakeholders to manage.</p></div>
-        <div><h3>E-commerce</h3><p>Checkout, payments, conversion funnels and A/B testing. Fast releases where every change is measured.</p></div>
-        <div><h3>Healthcare</h3><p>Patient journeys, clinical workflows and system integrations, with privacy, clinical safety and compliance requirements throughout.</p></div>
-        <div><h3>Entertainment</h3><p>Subscriptions, content and audience data. Commercial models, retention and digital product delivery.</p></div>
+  <section class="band" id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About me</h2>
+        <p>I've spent six years as a business analyst, working between the people with the problem and the teams who build the fix. I like untangling the messy bits, asking the question nobody has asked yet, and making sure the final result does what it was meant to do.</p>
+        <p>Outside work you'll probably find me [your hobby here].</p>
       </div>
-      <div class="toolkit">
-        <div><h3>Methods</h3><p>Agile (Scrum, Kanban) and Waterfall, BABOK techniques, BPMN, user story mapping, MoSCoW, root cause analysis</p></div>
-        <div><h3>Data</h3><p>SQL, Python (pandas), Excel, Power BI, Tableau, GA4, A/B test design</p></div>
-        <div><h3>Tools</h3><p>Jira, Confluence, Miro, Visio, Lucidchart, Figma (for reviewing designs)</p></div>
+      <div>
+        <h3>Industries</h3>
+        <ul class="pills"><li>Retail</li><li>E-commerce</li><li>Healthcare</li><li>Entertainment</li><li>Community sport</li></ul>
+        <h3>Tools I use</h3>
+        <p class="tools">Jira, Confluence, Miro, Visio, SQL, Excel, Power BI, Figma</p>
       </div>
     </div>
   </section>
 
-  <section class="block contact" id="contact">
+  <section id="contact">
     <div class="wrap">
-      <div>
-        <h2>Looking for a BA who sticks around until the numbers move?</h2>
-        <p>I'm open to senior BA and product analyst roles in Melbourne, hybrid or remote. The quickest way to reach me is by email.</p>
+      <div class="contact">
+        <div>
+          <h2>Let's talk</h2>
+          <p>I'm open to business analyst roles in Melbourne, hybrid or remote. Email is the quickest way to reach me.</p>
+        </div>
+        <div class="links">
+          <a href="mailto:your.email@example.com">Email <span>your.email@example.com</span></a>
+          <a href="https://linkedin.com/in/your-profile">LinkedIn <span>/in/your-profile</span></a>
+          <a href="https://github.com/your-username">GitHub <span>@your-username</span></a>
+        </div>
       </div>
-      <ul>
-        <li><span>Email</span><a href="mailto:your.email@example.com">your.email@example.com</a></li>
-        <li><span>LinkedIn</span><a href="https://linkedin.com/in/your-profile">linkedin.com/in/your-profile</a></li>
-        <li><span>GitHub</span><a href="https://github.com/your-username">github.com/your-username</a></li>
-      </ul>
     </div>
   </section>
 </main>
-<footer><div class="wrap">© 2026 Your Name. Case study data is fictional.</div></footer>
+
+<footer><div class="wrap">© 2026 Your Name</div></footer>
 </body>
 </html>
