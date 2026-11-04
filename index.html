@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name · Senior Business Analyst</title>
+<meta name="description" content="Senior Business Analyst with 6+ years across retail, e-commerce, healthcare and entertainment. Case studies, approach and contact details.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14213D;        /* deep navy: text, structure */
+    --slate:#5B6472;      /* secondary text */
+    --paper:#F7F8F5;      /* page */
+    --board:#FFFFFF;      /* whiteboard surface */
+    --rule:#D9DDE3;       /* lines */
+    --note:#F7D85A;       /* sticky-note yellow: the one bold thing */
+    --note-edge:#E7C43C;
+    --link:#1D5FA8;       /* links / focus */
+    --sans:"Schibsted Grotesk", system-ui, sans-serif;
+    --hand:"Caveat", "Segoe Print", cursive;
+    --measure:68ch;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:var(--link);text-underline-offset:.18em;text-decoration-thickness:1px}
+  a:hover{text-decoration-thickness:2px}
+  :focus-visible{outline:3px solid var(--link);outline-offset:3px;border-radius:4px}
+  img,svg{max-width:100%;display:block}
+  .wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+  .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:10}
+  .skip:focus{left:1rem;top:1rem}
+
+  /* ---------- header ---------- */
+  header.site{padding:1.25rem 0;border-bottom:1px solid var(--rule)}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .brand{font-weight:800;font-size:1.05rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+  .brand span{font-weight:500;color:var(--slate)}
+  nav.site ul{list-style:none;display:flex;gap:1.5rem;margin:0;padding:0;flex-wrap:wrap}
+  nav.site a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+  nav.site a:hover{text-decoration:underline}
+
+  /* ---------- hero ---------- */
+  .hero{padding:4.5rem 0 4rem}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:3.5rem;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem);line-height:1.05;letter-spacing:-.035em;font-weight:800;margin:0 0 1.25rem;max-width:14ch}
+  .hero p.lede{font-size:1.2rem;color:var(--slate);max-width:44ch;margin:0 0 2rem}
+  .actions{display:flex;gap:.75rem;flex-wrap:wrap}
+  .btn{display:inline-block;padding:.8rem 1.25rem;border-radius:8px;font-weight:600;text-decoration:none;font-size:1rem;border:2px solid var(--ink)}
+  .btn.primary{background:var(--ink);color:#fff}
+  .btn.primary:hover{background:#22325A;border-color:#22325A}
+  .btn.ghost{color:var(--ink);background:transparent}
+  .btn.ghost:hover{background:var(--ink);color:#fff}
+
+  /* the whiteboard */
+  .board{margin:0;position:relative;background:var(--board);border:1px solid var(--rule);border-radius:14px;padding:2rem 1.5rem 1.5rem;
+         background-image:radial-gradient(circle,#E3E7EC 1px,transparent 1.2px);background-size:22px 22px}
+  .board .caption{font:500 .85rem var(--sans);color:var(--slate);margin:0 0 1.1rem}
+  .flow{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem 2.8rem;position:relative}
+  .note{position:relative;background:var(--note);border-bottom:3px solid var(--note-edge);padding:.9rem 1rem 1rem;min-height:128px;
+        box-shadow:0 1px 0 rgba(20,33,61,.08),0 8px 14px -10px rgba(20,33,61,.35);font-family:var(--hand);color:#2A2A1F}
+  .note:nth-child(1){transform:rotate(-2deg)}
+  .note:nth-child(2){transform:rotate(1.5deg)}
+  .note:nth-child(3){transform:rotate(1deg)}
+  .note:nth-child(4){transform:rotate(-1.5deg)}
+  .note b{display:block;font-family:var(--sans);font-size:.78rem;font-weight:700;color:#5C4E10;margin-bottom:.15rem}
+  .note .big{display:block;font-size:2.1rem;line-height:1;font-weight:700}
+  .note .small{display:block;font-size:1.3rem;line-height:1.15;margin-top:.3rem}
+  .note::after{position:absolute;font:700 1.9rem/1 var(--hand);color:var(--ink);pointer-events:none}
+  .note:nth-child(1)::after,.note:nth-child(3)::after{content:"\2192";right:-2.15rem;top:50%;translate:0 -50%}
+  .note:nth-child(2)::after{content:"\2199";left:-1.9rem;bottom:-2.1rem}
+  .board .foot{margin:1.4rem 0 0;font:500 .85rem var(--sans);color:var(--slate)}
+  .board .foot a{font-weight:600}
+
+  @media (prefers-reduced-motion:no-preference){
+    .note{animation:stick .55s cubic-bezier(.2,.9,.3,1.25) both}
+    .note:nth-child(1){animation-delay:.15s}.note:nth-child(2){animation-delay:.45s}
+    .note:nth-child(3){animation-delay:.75s}.note:nth-child(4){animation-delay:1.05s}
+    @keyframes stick{from{opacity:0;translate:0 -14px;scale:1.04}to{opacity:1;translate:0 0;scale:1}}
+  }
+
+  /* ---------- sections ---------- */
+  section.block{padding:4.5rem 0;border-top:1px solid var(--rule)}
+  h2{font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.025em;line-height:1.15;margin:0 0 .6rem;font-weight:800}
+  .intro{color:var(--slate);max-width:var(--measure);margin:0 0 2.5rem;font-size:1.1rem}
+  h3{font-size:1.25rem;letter-spacing:-.015em;margin:0 0 .5rem;line-height:1.3}
+
+  /* featured case study */
+  .case{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;background:var(--board);border:1px solid var(--rule);border-radius:14px;padding:2.5rem}
+  .case h3{font-size:1.7rem;letter-spacing:-.025em;margin-bottom:.35rem}
+  .case .meta{color:var(--slate);font-size:.95rem;margin:0 0 1.5rem}
+  .case dl{margin:0 0 1.75rem;display:grid;gap:1.1rem}
+  .case dt{font-weight:700;font-size:.95rem}
+  .case dd{margin:.15rem 0 0;color:#2F3B52;max-width:58ch}
+  .results{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:0 0 1.75rem;padding:1.1rem 0;border-block:1px solid var(--rule)}
+  .results div{font-size:.88rem;color:var(--slate);line-height:1.35}
+  .results strong{display:block;font-size:1.55rem;color:var(--ink);letter-spacing:-.02em;line-height:1.1;margin-bottom:.2rem}
+  .chart h4{font-size:1rem;margin:0 0 .25rem}
+  .chart p{font-size:.88rem;color:var(--slate);margin:0 0 1rem}
+  .bars{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+  .bars li{display:grid;grid-template-columns:9.5rem 1fr 3.2rem;align-items:center;gap:.6rem;font-size:.88rem}
+  .bars .track{height:22px;background:#EEF0F3;border-radius:4px;overflow:hidden}
+  .bars .track,.bars .fill{display:block}
+  .bars .fill{height:100%;background:var(--ink);border-radius:4px}
+  .bars li.other .fill{background:#B6BDC8}
+  .bars .pct{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+  .chart .legend{margin-top:.9rem;font-size:.82rem;color:var(--slate);display:flex;gap:1.1rem;flex-wrap:wrap}
+  .chart .legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:2px;vertical-align:-1px;margin-right:.35rem}
+  .deliverables{margin-top:2rem}
+  .deliverables h4{font-size:1rem;margin:0 0 .6rem}
+  .deliverables ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.45rem}
+  .deliverables li{font-size:.85rem;padding:.3rem .65rem;border:1px solid var(--rule);border-radius:999px;color:#2F3B52;background:var(--paper)}
+
+  /* upcoming projects */
+  .more{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+  .more article{padding:1.5rem 0 0;border-top:3px solid var(--ink)}
+  .more .ind{font-size:.88rem;color:var(--slate);margin:0 0 .4rem;font-weight:500}
+  .more p{margin:0 0 .8rem;color:#2F3B52}
+  .more .status{font-size:.85rem;color:var(--slate);font-style:italic}
+
+  /* approach: this really is a sequence, so it's numbered */
+  ol.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:s;border-top:1px solid var(--rule)}
+  ol.steps li{counter-increment:s;padding:1.5rem 1.25rem 0 0;position:relative}
+  ol.steps li::before{content:counter(s);display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;font-size:.9rem;margin:-2.5rem 0 1rem}
+  ol.steps h3{font-size:1.1rem}
+  ol.steps p{margin:0;color:#2F3B52;font-size:.97rem}
+  ol.steps small{display:block;margin-top:.6rem;color:var(--slate);font-size:.85rem}
+
+  /* industries */
+  .industries{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 3.5rem}
+  .industries h3{display:flex;align-items:baseline;gap:.6rem}
+  .industries p{margin:0;color:#2F3B52;max-width:52ch}
+  .toolkit{margin-top:3.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+  .toolkit h3{font-size:1rem}
+  .toolkit p{margin:0;color:#2F3B52;font-size:.97rem}
+
+  /* contact */
+  .contact{background:var(--ink);color:#fff;border-top:none}
+  .contact .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:end}
+  .contact h2{color:#fff;max-width:18ch}
+  .contact p{color:#C9D1DE;max-width:50ch;margin:0}
+  .contact ul{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+  .contact li{display:grid;grid-template-columns:6rem 1fr;gap:.75rem;font-size:1.02rem;padding-bottom:.9rem;border-bottom:1px solid #2C3A5C}
+  .contact li span{color:#9AA7BD;font-size:.9rem}
+  .contact a{color:#fff}
+  .contact :focus-visible{outline-color:var(--note)}
+  footer{background:var(--ink);color:#9AA7BD;font-size:.85rem;padding:0 0 2.5rem}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:960px){
+    .hero .wrap,.case,.contact .wrap{grid-template-columns:1fr}
+    .hero{padding-top:3rem}
+    .more,.toolkit{grid-template-columns:1fr 1fr}
+    ol.steps{grid-template-columns:1fr 1fr;row-gap:2.5rem}
+  }
+  @media (max-width:620px){
+    .flow{grid-template-columns:1fr;gap:1.4rem}
+    .note::after{display:none}
+    .note{transform:none!important;min-height:0}
+    .results{grid-template-columns:1fr}
+    .more,.toolkit,.industries,ol.steps{grid-template-columns:1fr}
+    .case{padding:1.5rem}
+    .bars li{grid-template-columns:7.5rem 1fr 2.8rem}
+    nav.site ul{gap:1rem}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Your Name <span>· Senior Business Analyst</span></a>
+    <nav class="site" aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <h1>I find out why things aren't working, and what fixing them is worth.</h1>
+        <p class="lede">Senior Business Analyst with 6+ years across retail, e-commerce, healthcare and entertainment. I turn messy problems into clear requirements, back them with data, and stay through delivery until the benefits are measured.</p>
+        <div class="actions">
+          <a class="btn primary" href="#work">See my case studies</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <figure class="board" aria-labelledby="board-cap">
+        <p class="caption" id="board-cap">From my latest case study: one problem, traced from start to finish</p>
+        <div class="flow">
+          <div class="note"><b>Problem</b><span class="big">60%</span><span class="small">of shoppers leave after starting checkout</span></div>
+          <div class="note"><b>Analysis</b><span class="big">4 causes</span><span class="small">explain 92% of it, worth A$1.6M</span></div>
+          <div class="note"><b>Requirements</b><span class="big">18 + 10</span><span class="small">requirements and user stories, all traced to tests</span></div>
+          <div class="note"><b>Outcome</b><span class="big">A$1.35M</span><span class="small">a year, with payback in about 7 months</span></div>
+        </div>
+        <p class="foot">Read the full story in <a href="#case-checkout">Checkout conversion uplift</a>.</p>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <h2>Case studies</h2>
+      <p class="intro">Each one follows a full piece of work end to end, with the real artefacts: business case, process maps, requirements, analysis and test plans. Company names and data are fictional so that no client information is shared.</p>
+
+      <article class="case" id="case-checkout">
+        <div>
+          <h3>Checkout conversion uplift</h3>
+          <p class="meta">E-commerce and retail · Discovery through to benefits tracking</p>
+          <dl>
+            <div><dt>The problem</dt><dd>An Australian homewares retailer's online traffic grew 21%, but its revenue grew only 6%. Six in ten customers who started checkout didn't finish, and mobile customers converted 7 points worse than desktop customers.</dd></div>
+            <div><dt>What I did</dt><dd>Ran interviews, a 1,200-person survey and session-replay reviews. I analysed 40,000 sessions in SQL and Python and found four friction points. I sized each one in dollars, then wrote the BRD, user stories and UAT plan for two releases.</dd></div>
+            <div><dt>The trade-off I resolved</dt><dd>The loyalty team feared guest checkout would cut sign-ups. We moved account creation to after purchase, added a points incentive and agreed a guardrail KPI.</dd></div>
+          </dl>
+          <div class="results" aria-label="Targets">
+            <div><strong>40% → 48%</strong>checkout conversion target</div>
+            <div><strong>A$1.35M</strong>extra revenue a year</div>
+            <div><strong>~7 months</strong>payback on A$310K</div>
+          </div>
+          <a class="btn primary" href="https://github.com/your-username/checkout-optimisation-ba-case-study">View the full case study on GitHub</a>
+        </div>
+
+        <div>
+          <div class="chart">
+            <h4>Why customers abandoned checkout</h4>
+            <p>Share of 13,944 abandoned checkouts, from Apr–May 2026</p>
+            <ul class="bars">
+              <li><span>Forced account</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="pct">36%</span></li>
+              <li><span>Shipping cost</span><span class="track"><span class="fill" style="width:62%"></span></span><span class="pct">22%</span></li>
+              <li><span>Left at payment</span><span class="track"><span class="fill" style="width:55%"></span></span><span class="pct">20%</span></li>
+              <li><span>Address errors</span><span class="track"><span class="fill" style="width:22%"></span></span><span class="pct">8%</span></li>
+              <li><span>Payment errors</span><span class="track"><span class="fill" style="width:16%"></span></span><span class="pct">6%</span></li>
+              <li class="other"><span>Other</span><span class="track"><span class="fill" style="width:22%"></span></span><span class="pct">8%</span></li>
+            </ul>
+            <div class="legend"><span><i style="background:var(--ink)"></i>Fixed by this project</span><span><i style="background:#B6BDC8"></i>Out of scope</span></div>
+          </div>
+          <div class="deliverables">
+            <h4>What's in the repo</h4>
+            <ul>
+              <li>Business case and ROI</li><li>Stakeholder map and RACI</li><li>As-is and to-be process maps</li>
+              <li>Root cause analysis</li><li>BRD</li><li>User stories with Gherkin</li><li>Traceability matrix</li>
+              <li>SQL and Python analysis</li><li>UAT plan</li><li>Benefits realisation plan</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <div class="more">
+        <article>
+          <p class="ind">Healthcare</p>
+          <h3>Outpatient referral and booking redesign</h3>
+          <p>Cutting the time from GP referral to first appointment, with process maps, waiting-list KPIs and privacy requirements.</p>
+          <p class="status">Case study in progress</p>
+        </article>
+        <article>
+          <p class="ind">Entertainment</p>
+          <h3>Streaming subscription churn reduction</h3>
+          <p>Finding which subscribers leave and why, then building the business case for retention features and pricing changes.</p>
+          <p class="status">Case study in progress</p>
+        </article>
+        <article>
+          <p class="ind">Retail</p>
+          <h3>Click-and-collect stock accuracy</h3>
+          <p>Tracing why online orders get cancelled for stock the store doesn't have, and specifying the inventory fixes.</p>
+          <p class="status">Case study in progress</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="approach">
+    <div class="wrap">
+      <h2>How I work</h2>
+      <p class="intro">The same five stages, whatever the industry. Every requirement traces back to an objective and forward to a test, so nothing gets built that nobody needs.</p>
+      <ol class="steps">
+        <li><h3>Discover</h3><p>Talk to the people involved and the customers affected, then agree what success looks like.</p><small>Interviews, surveys, workshops</small></li>
+        <li><h3>Analyse</h3><p>Map how things work today, find the root causes and put a dollar value on each one.</p><small>Process maps, SQL, root cause analysis</small></li>
+        <li><h3>Specify</h3><p>Write requirements the team can build and test, prioritised against value.</p><small>BRDs, user stories, acceptance criteria</small></li>
+        <li><h3>Deliver</h3><p>Work with the team through build and UAT, triage defects and get sign-off.</p><small>UAT plans, defect triage, go/no-go</small></li>
+        <li><h3>Measure</h3><p>Check the benefits actually landed, and watch the guardrails.</p><small>KPI tracking, A/B tests, retros</small></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <h2>Where I've worked</h2>
+      <p class="intro">Six years of business analysis across four industries, each with its own constraints.</p>
+      <div class="industries">
+        <div><h3>Retail</h3><p>Store and online operations, inventory, click and collect, loyalty programs. Peak trading code freezes and many stakeholders to manage.</p></div>
+        <div><h3>E-commerce</h3><p>Checkout, payments, conversion funnels and A/B testing. Fast releases where every change is measured.</p></div>
+        <div><h3>Healthcare</h3><p>Patient journeys, clinical workflows and system integrations, with privacy, clinical safety and compliance requirements throughout.</p></div>
+        <div><h3>Entertainment</h3><p>Subscriptions, content and audience data. Commercial models, retention and digital product delivery.</p></div>
+      </div>
+      <div class="toolkit">
+        <div><h3>Methods</h3><p>Agile (Scrum, Kanban) and Waterfall, BABOK techniques, BPMN, user story mapping, MoSCoW, root cause analysis</p></div>
+        <div><h3>Data</h3><p>SQL, Python (pandas), Excel, Power BI, Tableau, GA4, A/B test design</p></div>
+        <div><h3>Tools</h3><p>Jira, Confluence, Miro, Visio, Lucidchart, Figma (for reviewing designs)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Looking for a BA who sticks around until the numbers move?</h2>
+        <p>I'm open to senior BA and product analyst roles in Melbourne, hybrid or remote. The quickest way to reach me is by email.</p>
+      </div>
+      <ul>
+        <li><span>Email</span><a href="mailto:your.email@example.com">your.email@example.com</a></li>
+        <li><span>LinkedIn</span><a href="https://linkedin.com/in/your-profile">linkedin.com/in/your-profile</a></li>
+        <li><span>GitHub</span><a href="https://github.com/your-username">github.com/your-username</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Your Name. Case study data is fictional.</div></footer>
+</body>
+</html>
