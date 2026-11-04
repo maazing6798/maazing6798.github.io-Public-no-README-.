@@ -7,253 +7,338 @@
 <meta name="description" content="Business Analyst with 6+ years across retail, e-commerce, healthcare and entertainment.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#17302A;      /* deep green-black: text */
-    --muted:#5D6F69;    /* secondary text */
-    --green:#1F6F5C;    /* primary */
-    --mint:#E4F2EC;     /* soft section band */
-    --butter:#FFE59A;   /* warm highlight */
+    --cobalt:#2B44D9;
+    --cobalt-deep:#1E32A8;
+    --ink:#10133A;
+    --lemon:#FFE45C;
+    --pink:#FF8FC7;
+    --lilac:#EEEBFF;
     --white:#FFFFFF;
-    --line:#D5E4DE;
-    --display:"Bricolage Grotesque", "Trebuchet MS", sans-serif;
+    --muted:#585C80;
+    --display:"Unbounded", "Arial Black", sans-serif;
     --body:"Figtree", system-ui, sans-serif;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{margin:0;background:var(--white);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.02em;margin:0}
-  a{color:var(--green)}
-  :focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
-  .wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+  body{margin:0;background:var(--white);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--display);margin:0;line-height:1.12;letter-spacing:-.01em}
+  a{color:var(--cobalt)}
+  button{font:inherit;cursor:pointer}
+  :focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:8px}
+  .wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
   .skip{position:absolute;left:-999px}
-  .skip:focus{left:1rem;top:1rem;background:var(--ink);color:#fff;padding:.5rem 1rem;border-radius:8px;z-index:9}
+  .skip:focus{left:1rem;top:1rem;background:var(--lemon);color:var(--ink);padding:.5rem 1rem;border-radius:8px;z-index:9}
 
-  /* header */
-  header{padding:1.4rem 0}
+  /* ---------- hero ---------- */
+  .hero{background:var(--cobalt);color:var(--white);position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:var(--cobalt-deep);right:-140px;top:-120px}
+  .hero::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--pink);left:-60px;bottom:-70px;opacity:.9}
+  header{position:relative;z-index:2;padding:1.5rem 0}
   header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-  .brand{font:700 1.15rem var(--display);color:var(--ink);text-decoration:none}
-  nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0}
-  nav a{color:var(--ink);text-decoration:none;font-weight:500}
-  nav a:hover{color:var(--green)}
+  .brand{font:700 1.05rem var(--display);color:var(--white);text-decoration:none}
+  nav ul{display:flex;gap:.4rem;list-style:none;margin:0;padding:0}
+  nav a{color:var(--white);text-decoration:none;font-weight:600;padding:.45rem .9rem;border-radius:999px;transition:background .2s}
+  nav a:hover{background:rgba(255,255,255,.14)}
 
-  /* buttons */
-  .btn{display:inline-block;padding:.85rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;transition:background .15s,transform .15s}
-  .btn-main{background:var(--green);color:#fff}
-  .btn-main:hover{background:#185A4A}
-  .btn-soft{background:var(--mint);color:var(--ink)}
-  .btn-soft:hover{background:#D3EADF}
-  @media (prefers-reduced-motion:no-preference){.btn:active{transform:scale(.97)}}
-
-  /* hero */
-  .hero{padding:4rem 0 5rem}
-  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center}
-  .hello{font:600 1rem var(--body);color:var(--green);margin:0 0 1rem}
-  .hero h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;max-width:15ch}
-  .hero p.lede{font-size:1.2rem;color:var(--muted);max-width:42ch;margin:1.4rem 0 2rem}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:3rem 0 5rem}
+  .badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.14);padding:.4rem .9rem;border-radius:999px;font-weight:600;font-size:.92rem;margin-bottom:1.5rem}
+  .badge i{width:.55rem;height:.55rem;border-radius:50%;background:var(--lemon);box-shadow:0 0 0 4px rgba(255,228,92,.3)}
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:800;max-width:14ch}
+  .hero p.lede{font-size:1.2rem;color:#DCE1FF;max-width:40ch;margin:1.4rem 0 2.2rem}
   .actions{display:flex;gap:.75rem;flex-wrap:wrap}
+  .btn{display:inline-block;padding:.9rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;border:0;transition:transform .15s, background .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-lemon{background:var(--lemon);color:var(--ink)}
+  .btn-ghost{background:transparent;color:var(--white);box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .btn-ink{background:var(--ink);color:var(--white)}
 
-  /* trace card: one requirement followed from need to test */
-  .trace{background:var(--mint);border-radius:28px;padding:1.75rem}
-  .trace p.cap{margin:0 0 1rem;font-size:.92rem;color:var(--muted)}
-  .trace ol{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;position:relative}
-  .trace li{background:var(--white);border-radius:16px;padding:.9rem 1.1rem;display:grid;grid-template-columns:auto 1fr;gap:.2rem .9rem;align-items:baseline}
-  .trace .tag{font:700 .8rem var(--display);background:var(--butter);color:var(--ink);padding:.15rem .55rem;border-radius:999px;grid-row:span 2;align-self:center}
-  .trace .what{font-weight:600;line-height:1.35}
-  .trace .kind{font-size:.85rem;color:var(--muted)}
-  .trace li.done .tag{background:var(--green);color:#fff}
-  @media (prefers-reduced-motion:no-preference){
-    .trace li{animation:up .5s cubic-bezier(.2,.8,.3,1) both}
-    .trace li:nth-child(2){animation-delay:.15s}.trace li:nth-child(3){animation-delay:.3s}.trace li:nth-child(4){animation-delay:.45s}
-    @keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  }
+  /* ---------- phone demo ---------- */
+  .demo{display:flex;flex-direction:column;align-items:center;gap:1rem}
+  .demo-hint{font-size:.9rem;color:#DCE1FF;margin:0}
+  .roles{display:flex;gap:.4rem;background:rgba(16,19,58,.35);padding:.35rem;border-radius:999px}
+  .roles button{border:0;background:transparent;color:var(--white);padding:.5rem 1rem;border-radius:999px;font-weight:700;font-size:.92rem;transition:background .2s,color .2s}
+  .roles button[aria-selected="true"]{background:var(--lemon);color:var(--ink)}
+  .phone{width:300px;max-width:100%;background:var(--ink);border-radius:42px;padding:12px;box-shadow:0 30px 60px -20px rgba(10,12,50,.6)}
+  .screen{background:#F6F5FF;border-radius:32px;height:570px;overflow:hidden;color:var(--ink);position:relative}
+  .notch{width:90px;height:22px;background:var(--ink);border-radius:0 0 14px 14px;margin:0 auto}
+  .view{position:absolute;inset:22px 0 0;padding:1rem 1rem 1.2rem;display:flex;flex-direction:column;gap:.7rem;opacity:0;transform:translateX(16px);transition:opacity .3s,transform .3s;pointer-events:none}
+  .view.on{opacity:1;transform:none;pointer-events:auto}
+  .view h4{font:700 1rem var(--display);margin:.3rem 0 0}
+  .view .hi{font-size:.85rem;color:var(--muted);margin:0}
+  .card{background:var(--white);border-radius:18px;padding:.85rem .95rem;box-shadow:0 1px 0 rgba(16,19,58,.06)}
+  .card .row{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+  .card b{font-size:.95rem}
+  .card small{display:block;color:var(--muted);font-size:.8rem}
+  .chip{font-size:.72rem;font-weight:700;padding:.15rem .5rem;border-radius:999px;background:var(--lilac);color:var(--cobalt)}
+  .chip.ok{background:#D9F7E5;color:#0F6B3A}
+  .avail{display:flex;gap:.4rem;margin-top:.6rem}
+  .avail button{flex:1;border:2px solid var(--lilac);background:var(--white);border-radius:12px;padding:.4rem;font-size:.82rem;font-weight:700;color:var(--ink);transition:all .2s}
+  .avail button[aria-pressed="true"].yes{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+  .avail button[aria-pressed="true"].no{background:var(--pink);border-color:var(--pink);color:var(--ink)}
+  .bar{display:flex;height:12px;border-radius:999px;overflow:hidden;margin:.6rem 0 .4rem;background:var(--lilac)}
+  .bar span{transition:width .4s}
+  .legend{display:flex;gap:.8rem;font-size:.78rem;color:var(--muted)}
+  .legend i{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;margin-right:.25rem;vertical-align:0}
+  .wide{width:100%;border:0;border-radius:14px;padding:.7rem;font-weight:700;background:var(--cobalt);color:#fff;margin-top:.6rem;transition:background .2s}
+  .wide.done{background:#D9F7E5;color:#0F6B3A}
+  .names{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem}
+  .names span{font-size:.78rem;background:var(--lilac);padding:.15rem .5rem;border-radius:999px}
+  .medals{display:flex;gap:.5rem;margin-top:.4rem}
+  .medal{width:46px;height:46px;border-radius:50%;background:var(--lemon);display:grid;place-items:center;font:800 .7rem var(--display);color:var(--ink);transition:transform .3s}
+  .medal:hover{transform:rotate(-12deg) scale(1.08)}
+  .medal.p{background:var(--pink)}
+  .safe{font-size:.75rem;color:var(--muted);display:flex;gap:.4rem;align-items:center}
 
-  /* sections */
-  section{padding:5rem 0}
-  h2{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:800;margin-bottom:.75rem}
-  .sub{color:var(--muted);max-width:56ch;margin:0 0 2.5rem;font-size:1.1rem}
+  /* ---------- sections ---------- */
+  section{padding:5.5rem 0}
+  .kicker{font-weight:700;color:var(--cobalt);margin:0 0 .6rem}
+  h2{font-size:clamp(1.6rem,2.8vw,2.1rem);font-weight:800}
+  .sub{color:var(--muted);max-width:54ch;margin:.9rem 0 2.5rem;font-size:1.1rem}
 
-  /* featured */
-  .band{background:var(--mint)}
-  .feature{background:var(--white);border-radius:28px;padding:2.75rem;display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:start}
-  .feature .label{display:inline-block;font-size:.88rem;font-weight:600;color:var(--green);margin-bottom:.6rem}
-  .feature h3{font-size:clamp(1.6rem,2.6vw,2.1rem);font-weight:800;margin-bottom:1rem}
-  .feature p{margin:0 0 1rem;color:#33463F;max-width:52ch}
-  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.75rem 0 2rem}
-  .nums div{background:var(--mint);border-radius:16px;padding:1rem;font-size:.9rem;color:var(--muted);line-height:1.35}
-  .nums strong{display:block;font:800 1.45rem var(--display);color:var(--ink);margin-bottom:.25rem}
-  .products{display:grid;gap:.75rem}
-  .products div{border:1.5px solid var(--line);border-radius:18px;padding:1.1rem 1.25rem}
-  .products h4{font:700 1.05rem var(--display);margin:0 0 .2rem}
-  .products p{margin:0;font-size:.95rem;color:var(--muted)}
+  /* featured case */
+  .case{background:var(--lilac);border-radius:36px;padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .case h3{font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:800;margin:.4rem 0 1rem}
+  .case p{margin:0 0 1rem;color:#33375C;max-width:48ch}
+  .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.5rem;padding:0;list-style:none}
+  .tags li{background:var(--white);border-radius:999px;padding:.3rem .8rem;font-size:.88rem;font-weight:600}
+  .switch{display:inline-flex;background:var(--white);border-radius:999px;padding:.3rem;margin-bottom:1rem}
+  .switch button{border:0;background:transparent;padding:.5rem 1.1rem;border-radius:999px;font-weight:700;color:var(--muted)}
+  .switch button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+  .stats{display:grid;gap:.75rem}
+  .stat{background:var(--white);border-radius:22px;padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .stat span{color:var(--muted);font-weight:500}
+  .stat strong{font:800 1.7rem var(--display);color:var(--ink);transition:color .3s}
+  .stats.after .stat strong{color:var(--cobalt)}
 
-  /* more work */
-  .more{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
-  .more article{background:rgba(255,255,255,.6);border-radius:20px;padding:1.4rem}
-  .more .ind{font-size:.85rem;color:var(--green);font-weight:600;margin:0 0 .35rem}
-  .more h3{font-size:1.15rem;font-weight:700;margin-bottom:.4rem}
-  .more p{margin:0;font-size:.92rem;color:var(--muted)}
+  .soon{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
+  .soon article{border:2px dashed #CFCBF2;border-radius:24px;padding:1.3rem 1.4rem}
+  .soon p{margin:0;color:var(--muted);font-size:.92rem}
+  .soon h3{font:700 1rem var(--display);margin:.35rem 0 .3rem}
+  .soon .ind{font-weight:700;color:var(--cobalt);font-size:.85rem}
 
-  /* approach: a real sequence */
-  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;list-style:none;margin:0;padding:0;counter-reset:s}
-  .steps li{counter-increment:s}
-  .steps li::before{content:counter(s);display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--butter);font:800 1rem var(--display);margin-bottom:.9rem}
-  .steps h3{font-size:1.15rem;font-weight:700;margin-bottom:.3rem}
-  .steps p{margin:0;font-size:.95rem;color:var(--muted)}
+  /* approach tabs */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;margin-bottom:1rem}
+  .steps button{border:0;background:var(--lilac);border-radius:20px;padding:1rem;text-align:left;color:var(--ink);transition:background .2s,transform .2s}
+  .steps button:hover{transform:translateY(-2px)}
+  .steps button span{display:block;font:800 .8rem var(--display);color:var(--cobalt);margin-bottom:.3rem}
+  .steps button b{font:700 1rem var(--display)}
+  .steps button[aria-selected="true"]{background:var(--cobalt);color:var(--white)}
+  .steps button[aria-selected="true"] span{color:var(--lemon)}
+  .panel{background:var(--ink);color:var(--white);border-radius:28px;padding:2rem 2.2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;min-height:190px}
+  .panel h3{font-size:1.25rem;margin-bottom:.6rem}
+  .panel p{margin:0;color:#C9CCEF}
+  .panel .eg{background:rgba(255,255,255,.07);border-radius:18px;padding:1.1rem 1.2rem}
+  .panel .eg b{display:block;color:var(--lemon);font-size:.88rem;margin-bottom:.3rem}
+  .panel[hidden]{display:none}
 
-  /* about */
-  .about{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  /* about + contact */
+  .about{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start}
   .about p{margin:0 0 1rem;max-width:50ch}
-  .pills{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0 0 2rem;padding:0}
-  .pills li{background:var(--white);border-radius:999px;padding:.4rem .95rem;font-weight:500;font-size:.95rem}
-  .about h3{font-size:1.05rem;font-weight:700;margin:0 0 .75rem}
-  .tools{margin:0;color:var(--muted)}
-
-  /* contact */
-  .contact{background:var(--ink);color:#fff;border-radius:32px;padding:3.5rem;display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:center}
-  .contact h2{color:#fff}
-  .contact p{color:#BFD3CB;margin:0;max-width:44ch}
-  .contact .links{display:grid;gap:.6rem}
-  .contact .links a{display:flex;justify-content:space-between;gap:1rem;background:rgba(255,255,255,.08);border-radius:14px;padding:.9rem 1.1rem;color:#fff;text-decoration:none}
-  .contact .links a:hover{background:rgba(255,255,255,.14)}
-  .contact .links span{color:#BFD3CB;font-size:.9rem}
-  .contact :focus-visible{outline-color:var(--butter)}
-  #contact{padding-bottom:2rem}
+  .about .tags li{background:var(--lilac)}
+  .contact{background:var(--lemon);border-radius:36px;padding:2.5rem;position:relative;overflow:hidden}
+  .contact::after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;background:var(--pink);right:-50px;top:-50px}
+  .contact h2{position:relative;z-index:1;font-size:1.8rem;margin-bottom:.6rem}
+  .contact p{position:relative;z-index:1;margin:0 0 1.5rem;color:#3A3A20}
+  .contact .links{position:relative;z-index:1;display:grid;gap:.6rem}
+  .contact .links a,.copy{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:var(--white);border:0;border-radius:16px;padding:.9rem 1.1rem;color:var(--ink);text-decoration:none;font-weight:700;width:100%;text-align:left;transition:transform .15s}
+  .contact .links a:hover,.copy:hover{transform:translateX(4px)}
+  .contact .links small{font-weight:500;color:var(--muted)}
   footer{padding:0 0 2.5rem;color:var(--muted);font-size:.9rem}
 
-  @media (max-width:900px){
-    .hero .wrap,.feature,.about,.contact{grid-template-columns:1fr}
-    .hero .wrap{gap:2.5rem}
-    .steps{grid-template-columns:1fr 1fr}
-    .more{grid-template-columns:1fr}
+  @media (max-width:920px){
+    .hero-grid,.case,.about,.panel{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(3,1fr)}
+    .soon{grid-template-columns:1fr}
   }
   @media (max-width:560px){
-    nav ul{gap:1rem}
-    .hero{padding:2rem 0 3.5rem}
-    section{padding:3.5rem 0}
-    .feature,.contact{padding:1.6rem;border-radius:22px}
-    .nums{grid-template-columns:1fr}
-    .steps{grid-template-columns:1fr}
+    .hero-grid{padding:1.5rem 0 4rem}
+    section{padding:4rem 0}
+    .case,.contact{padding:1.6rem;border-radius:26px}
+    .steps{grid-template-columns:1fr 1fr}
+    .panel{padding:1.5rem}
+    nav a{padding:.4rem .6rem}
   }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <div class="wrap">
-    <a class="brand" href="#top">Your Name</a>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-  <div class="hero" id="top">
+<div class="hero">
+  <header>
     <div class="wrap">
-      <div>
-        <p class="hello">Hi, I'm Your Name, a Business Analyst in Melbourne</p>
-        <h1>I turn messy problems into requirements teams can build.</h1>
-        <p class="lede">Six years across retail, e-commerce, healthcare and entertainment. I listen to the people involved, back decisions with data, and stay until the results are measured.</p>
-        <div class="actions">
-          <a class="btn btn-main" href="#work">See my work</a>
-          <a class="btn btn-soft" href="#contact">Say hello</a>
+      <a class="brand" href="#top">Your Name</a>
+      <nav aria-label="Main"><ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#about">About</a></li>
+      </ul></nav>
+    </div>
+  </header>
+
+  <div class="wrap hero-grid" id="top">
+    <div>
+      <span class="badge"><i></i>Open to BA roles in Melbourne</span>
+      <h1>I turn messy problems into things people love using.</h1>
+      <p class="lede">I'm a Business Analyst with 6+ years across retail, e-commerce, healthcare and entertainment. I find out what people really need, then help teams build it.</p>
+      <div class="actions">
+        <a class="btn btn-lemon" href="#work">See my work</a>
+        <a class="btn btn-ghost" href="#about">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="demo">
+      <p class="demo-hint" id="demo-hint">Try the app from my latest project</p>
+      <div class="roles" role="tablist" aria-labelledby="demo-hint">
+        <button role="tab" aria-selected="true" aria-controls="v-parent" id="t-parent" data-view="v-parent">Parent</button>
+        <button role="tab" aria-selected="false" aria-controls="v-coach" id="t-coach" data-view="v-coach" tabindex="-1">Coach</button>
+        <button role="tab" aria-selected="false" aria-controls="v-player" id="t-player" data-view="v-player" tabindex="-1">Player</button>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="notch"></div>
+
+          <div class="view on" id="v-parent" role="tabpanel" aria-labelledby="t-parent">
+            <div><p class="hi">Good morning, Mei</p><h4>This Saturday</h4></div>
+            <div class="card">
+              <div class="row"><b>Mia · U8 Blue</b><span class="chip">9:30</span></div>
+              <small>vs Eastfield · Pitch 2</small>
+              <div class="avail" data-child="mia">
+                <button class="yes" aria-pressed="true">Can play</button>
+                <button class="no" aria-pressed="false">Can't</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="row"><b>Sam · U12 Red</b><span class="chip">11:00</span></div>
+              <small>at Lakeside Reserve</small>
+              <div class="avail" data-child="sam">
+                <button class="yes" aria-pressed="false">Can play</button>
+                <button class="no" aria-pressed="false">Can't</button>
+              </div>
+            </div>
+            <div class="card"><div class="row"><b>2027 fees</b><span class="chip ok">Paid</span></div><small>Sibling discount applied automatically</small></div>
+            <div class="card"><div class="row"><b>Your duty</b><span class="chip">Canteen 9am</span></div></div>
+          </div>
+
+          <div class="view" id="v-coach" role="tabpanel" aria-labelledby="t-coach" hidden>
+            <div><p class="hi">Coach Dave</p><h4>U10 Red vs Eastfield</h4></div>
+            <div class="card">
+              <b>Who's playing Saturday?</b>
+              <div class="bar" aria-hidden="true"><span id="bar-in" style="width:73%;background:var(--cobalt)"></span><span id="bar-out" style="width:9%;background:var(--pink)"></span></div>
+              <div class="legend"><span><i style="background:var(--cobalt)"></i><b id="n-in">8</b> in</span><span><i style="background:var(--pink)"></i>1 out</span><span><i style="background:var(--lilac)"></i><b id="n-wait">2</b> no reply</span></div>
+              <button class="wide" id="remind">Remind 2 parents</button>
+            </div>
+            <div class="card"><b>Thursday training</b><small>Tap to mark attendance · 11 players</small></div>
+            <div class="card"><div class="row"><b>My safety check</b><span class="chip ok">Verified</span></div><small>Working With Children Check, expires 2029</small></div>
+          </div>
+
+          <div class="view" id="v-player" role="tabpanel" aria-labelledby="t-player" hidden>
+            <div><p class="hi">Hey Leo</p><h4>U13 Blue</h4></div>
+            <div class="card"><div class="row"><b>Next game</b><span class="chip">Sat 10:15</span></div><small>vs Northside · Pitch 1 · wear the blue kit</small></div>
+            <div class="card"><b>My team</b>
+              <div class="names"><span>Ava</span><span>Noah</span><span>Zara</span><span>Leo</span><span>Kai</span><span>Ruby</span><span>Eli</span><span>+4</span></div>
+            </div>
+            <div class="card"><b>My medals</b>
+              <div class="medals"><div class="medal">MVP</div><div class="medal p">Team</div></div>
+            </div>
+            <p class="safe">🔒 View only. A parent controls this account, and there's no messaging.</p>
+          </div>
         </div>
       </div>
-
-      <figure class="trace" aria-labelledby="trace-cap" style="margin:0">
-        <p class="cap" id="trace-cap">One requirement from my latest project, followed from need to test:</p>
-        <ol>
-          <li><span class="tag">Need</span><span class="what">Coaches want to message older players</span><span class="kind">Raised in a coaches' focus group</span></li>
-          <li><span class="tag">Rule</span><span class="what">Messages go to parents only</span><span class="kind">Agreed with the child safety officer</span></li>
-          <li><span class="tag">Story</span><span class="what">Team announcements reach every parent, and no player</span><span class="kind">US-303, with acceptance criteria</span></li>
-          <li class="done"><span class="tag">Test</span><span class="what">No message option on a player's profile</span><span class="kind">TC-21, ready for UAT</span></li>
-        </ol>
-      </figure>
     </div>
   </div>
+</div>
 
-  <section class="band" id="work">
+<main id="main">
+  <section id="work">
     <div class="wrap">
-      <h2>Featured work</h2>
-      <p class="sub">Full case studies with the real artefacts behind them. Names and data are fictional to protect client confidentiality.</p>
+      <p class="kicker">Featured work</p>
+      <h2>A website and app for a local junior soccer club</h2>
+      <p class="sub">The phone above shows part of this project. Names and data are fictional to protect client confidentiality.</p>
 
-      <article class="feature">
+      <article class="case">
         <div>
-          <span class="label">Community sport · Agency-side BA</span>
-          <h3>A website and app for a local junior soccer club</h3>
-          <p>A club for under-14s, with 65 players and only volunteers to run it, was managing everything with spreadsheets, bank transfers and WhatsApp groups. A fifth of fees were still unpaid at round 1.</p>
-          <p>I gathered requirements from the committee, coaches and parents, and worked with my company's design and development teams to deliver it.</p>
-          <div class="nums">
-            <div><strong>80→95%</strong>fees paid by round 1</div>
-            <div><strong>220→80</strong>volunteer hours a season</div>
-            <div><strong>100%</strong>coaches safety-checked</div>
-          </div>
-          <a class="btn btn-main" href="https://github.com/your-username/local-soccer-club-platform-ba-case-study">Read the case study</a>
+          <ul class="tags"><li>Community sport</li><li>Agency-side BA</li><li>Website + app</li></ul>
+          <p>A club for under-14s, with 65 players and only volunteers to run it, was running on spreadsheets, bank transfers and WhatsApp groups. A fifth of fees were still unpaid at round 1.</p>
+          <p>I gathered requirements from the committee, coaches and parents, then worked with my company's designers and developers on a website, a committee portal and an app with separate views for parents, coaches and players.</p>
+          <a class="btn btn-ink" href="https://github.com/your-username/local-soccer-club-platform-ba-case-study">Read the full case study</a>
         </div>
-        <div class="products" aria-label="What we're building">
-          <div><h4>Club website</h4><p>News, fixtures and a simple way to join.</p></div>
-          <div><h4>Committee portal</h4><p>Registrations, fees, teams and safety checks in one place.</p></div>
-          <div><h4>Member app</h4><p>Parents register, pay and confirm availability. Coaches see who's playing. Players get a simple view their parent controls.</p></div>
+        <div>
+          <div class="switch" role="group" aria-label="Show results">
+            <button aria-pressed="true" data-mode="before">2026, before</button>
+            <button aria-pressed="false" data-mode="after">2027 target</button>
+          </div>
+          <div class="stats" id="stats" aria-live="polite">
+            <div class="stat"><span>Fees paid by round 1</span><strong data-before="80%" data-after="95%">80%</strong></div>
+            <div class="stat"><span>Volunteer admin hours</span><strong data-before="220" data-after="80">220</strong></div>
+            <div class="stat"><span>Coaches safety-checked</span><strong data-before="Unknown" data-after="100%">Unknown</strong></div>
+          </div>
         </div>
       </article>
 
-      <div class="more">
-        <article><p class="ind">Healthcare · Coming soon</p><h3>Faster outpatient referrals</h3><p>Cutting the wait from GP referral to first appointment.</p></article>
-        <article><p class="ind">Entertainment · Coming soon</p><h3>Fewer streaming cancellations</h3><p>Why subscribers leave, and what would keep them.</p></article>
-        <article><p class="ind">Retail · Coming soon</p><h3>Click and collect that works</h3><p>Fixing cancelled orders for stock stores don't have.</p></article>
+      <div class="soon">
+        <article><span class="ind">Healthcare · coming soon</span><h3>Faster outpatient referrals</h3><p>Cutting the wait from GP referral to first appointment.</p></article>
+        <article><span class="ind">Entertainment · coming soon</span><h3>Fewer streaming cancellations</h3><p>Why subscribers leave, and what would keep them.</p></article>
+        <article><span class="ind">Retail · coming soon</span><h3>Click and collect that works</h3><p>Fixing cancelled orders for stock stores don't have.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="approach">
+  <section id="approach" style="padding-top:0">
     <div class="wrap">
+      <p class="kicker">Approach</p>
       <h2>How I work</h2>
-      <p class="sub">The same five steps, whatever the industry.</p>
-      <ol class="steps">
-        <li><h3>Listen</h3><p>Talk to the people involved and agree what success looks like.</p></li>
-        <li><h3>Analyse</h3><p>Map how things work today and find the real causes.</p></li>
-        <li><h3>Define</h3><p>Write requirements and stories the team can build and test.</p></li>
-        <li><h3>Deliver</h3><p>Work with the team through build, testing and sign-off.</p></li>
-        <li><h3>Measure</h3><p>Check the results actually landed.</p></li>
-      </ol>
+      <p class="sub">Pick a step to see what I do, and how it played out on the soccer club project.</p>
+      <div class="steps" role="tablist" aria-label="How I work">
+        <button role="tab" aria-selected="true" aria-controls="p1" id="s1"><span>01</span><b>Listen</b></button>
+        <button role="tab" aria-selected="false" aria-controls="p2" id="s2" tabindex="-1"><span>02</span><b>Analyse</b></button>
+        <button role="tab" aria-selected="false" aria-controls="p3" id="s3" tabindex="-1"><span>03</span><b>Define</b></button>
+        <button role="tab" aria-selected="false" aria-controls="p4" id="s4" tabindex="-1"><span>04</span><b>Deliver</b></button>
+        <button role="tab" aria-selected="false" aria-controls="p5" id="s5" tabindex="-1"><span>05</span><b>Measure</b></button>
+      </div>
+      <div class="panel" role="tabpanel" id="p1" aria-labelledby="s1">
+        <div><h3>Listen</h3><p>Interviews, workshops and surveys with the people who live with the problem, so we agree on what success looks like before anyone builds anything.</p></div>
+        <div class="eg"><b>On the soccer project</b>Interviews with 8 people, a survey answered by 38 families, and a Saturday morning spent watching match day at the ground.</div>
+      </div>
+      <div class="panel" role="tabpanel" id="p2" aria-labelledby="s2" hidden>
+        <div><h3>Analyse</h3><p>Map how things work today, dig into the data and find the real causes rather than the loudest complaints.</p></div>
+        <div class="eg"><b>On the soccer project</b>Families with more than one child paid 13 days later, because the sibling discount was worked out by hand.</div>
+      </div>
+      <div class="panel" role="tabpanel" id="p3" aria-labelledby="s3" hidden>
+        <div><h3>Define</h3><p>Requirements, user stories and acceptance criteria clear enough for developers to build and testers to test.</p></div>
+        <div class="eg"><b>On the soccer project</b>28 requirements and 19 user stories, each traced to a test, including child-safety rules agreed with the club.</div>
+      </div>
+      <div class="panel" role="tabpanel" id="p4" aria-labelledby="s4" hidden>
+        <div><h3>Deliver</h3><p>Work with the team every sprint, answer questions fast, run user testing and handle changes without drama.</p></div>
+        <div class="eg"><b>On the soccer project</b>Fortnightly demos at the clubroom on training nights, and user testing with volunteer parents.</div>
+      </div>
+      <div class="panel" role="tabpanel" id="p5" aria-labelledby="s5" hidden>
+        <div><h3>Measure</h3><p>Check that the results actually landed, and keep an eye on anything that could go wrong.</p></div>
+        <div class="eg"><b>On the soccer project</b>Targets of 95% of fees paid by round 1 and volunteer admin cut from 220 to 80 hours, with zero child-safety breaches.</div>
+      </div>
     </div>
   </section>
 
-  <section class="band" id="about">
+  <section id="about" style="padding-top:0">
     <div class="wrap about">
       <div>
-        <h2>About me</h2>
-        <p>I've spent six years as a business analyst, working between the people with the problem and the teams who build the fix. I like untangling the messy bits, asking the question nobody has asked yet, and making sure the final result does what it was meant to do.</p>
+        <p class="kicker">About</p>
+        <h2>Hi, I'm Your Name</h2>
+        <p style="margin-top:1rem">I've spent six years working between the people with the problem and the teams who build the fix. I like untangling the messy bits and asking the question nobody has asked yet.</p>
         <p>Outside work you'll probably find me [your hobby here].</p>
+        <ul class="tags"><li>Retail</li><li>E-commerce</li><li>Healthcare</li><li>Entertainment</li><li>Jira</li><li>Confluence</li><li>Miro</li><li>SQL</li><li>Power BI</li></ul>
       </div>
-      <div>
-        <h3>Industries</h3>
-        <ul class="pills"><li>Retail</li><li>E-commerce</li><li>Healthcare</li><li>Entertainment</li><li>Community sport</li></ul>
-        <h3>Tools I use</h3>
-        <p class="tools">Jira, Confluence, Miro, Visio, SQL, Excel, Power BI, Figma</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap">
-      <div class="contact">
-        <div>
-          <h2>Let's talk</h2>
-          <p>I'm open to business analyst roles in Melbourne, hybrid or remote. Email is the quickest way to reach me.</p>
-        </div>
+      <div class="contact" id="contact">
+        <h2>Let's talk</h2>
+        <p>Email is the quickest way to reach me.</p>
         <div class="links">
-          <a href="mailto:your.email@example.com">Email <span>your.email@example.com</span></a>
-          <a href="https://linkedin.com/in/your-profile">LinkedIn <span>/in/your-profile</span></a>
-          <a href="https://github.com/your-username">GitHub <span>@your-username</span></a>
+          <button class="copy" id="copy" data-email="your.email@example.com">Email <small id="copy-label">your.email@example.com · copy</small></button>
+          <a href="https://linkedin.com/in/your-profile">LinkedIn <small>/in/your-profile</small></a>
+          <a href="https://github.com/your-username">GitHub <small>@your-username</small></a>
         </div>
       </div>
     </div>
@@ -261,5 +346,59 @@
 </main>
 
 <footer><div class="wrap">© 2026 Your Name</div></footer>
+
+<script>
+// Tabs (used by the phone demo and "How I work"), with arrow-key support
+function tabs(list, onChange){
+  const btns=[...list.querySelectorAll('[role=tab]')];
+  const pick=(b)=>{
+    btns.forEach(x=>{const on=x===b;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+      const p=document.getElementById(x.getAttribute('aria-controls'));if(p){p.hidden=!on;p.classList.toggle('on',on);}});
+    onChange&&onChange(b);
+  };
+  btns.forEach((b,i)=>{
+    b.addEventListener('click',()=>pick(b));
+    b.addEventListener('keydown',e=>{
+      const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d)return;
+      const n=btns[(i+d+btns.length)%btns.length]; n.focus(); pick(n);
+    });
+  });
+}
+tabs(document.querySelector('.roles'));
+tabs(document.querySelector('.steps'));
+
+// Parent view: availability toggles
+document.querySelectorAll('.avail').forEach(g=>{
+  g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
+    g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  }));
+});
+
+// Coach view: remind parents who haven't replied
+const remind=document.getElementById('remind');
+remind.addEventListener('click',()=>{
+  if(remind.classList.contains('done'))return;
+  remind.textContent='Reminder sent';remind.classList.add('done');
+  setTimeout(()=>{document.getElementById('n-in').textContent='10';document.getElementById('n-wait').textContent='0';
+    document.getElementById('bar-in').style.width='91%';},900);
+});
+
+// Featured case: before / after switch
+document.querySelectorAll('.switch button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.switch button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const mode=b.dataset.mode, stats=document.getElementById('stats');
+  stats.classList.toggle('after',mode==='after');
+  stats.querySelectorAll('strong').forEach(s=>s.textContent=s.dataset[mode]);
+}));
+
+// Copy email
+const copy=document.getElementById('copy');
+copy.addEventListener('click',async()=>{
+  const label=document.getElementById('copy-label');
+  try{await navigator.clipboard.writeText(copy.dataset.email);label.textContent='Copied!';}
+  catch(e){label.textContent=copy.dataset.email;}
+  setTimeout(()=>label.textContent=copy.dataset.email+' · copy',2000);
+});
+</script>
 </body>
 </html>
