@@ -105,7 +105,7 @@
   .bars .track{height:22px;background:#EEF0F3;border-radius:4px;overflow:hidden}
   .bars .track,.bars .fill{display:block}
   .bars .fill{height:100%;background:var(--ink);border-radius:4px}
-  .bars li.other .fill{background:#B6BDC8}
+  .bars .fill.r2{background:var(--link)}
   .bars .pct{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
   .chart .legend{margin-top:.9rem;font-size:.82rem;color:var(--slate);display:flex;gap:1.1rem;flex-wrap:wrap}
   .chart .legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:2px;vertical-align:-1px;margin-right:.35rem}
@@ -200,12 +200,12 @@
       <figure class="board" aria-labelledby="board-cap">
         <p class="caption" id="board-cap">From my latest case study: one problem, traced from start to finish</p>
         <div class="flow">
-          <div class="note"><b>Problem</b><span class="big">60%</span><span class="small">of shoppers leave after starting checkout</span></div>
-          <div class="note"><b>Analysis</b><span class="big">4 causes</span><span class="small">explain 92% of it, worth A$1.6M</span></div>
-          <div class="note"><b>Requirements</b><span class="big">18 + 10</span><span class="small">requirements and user stories, all traced to tests</span></div>
-          <div class="note"><b>Outcome</b><span class="big">A$1.35M</span><span class="small">a year, with payback in about 7 months</span></div>
+          <div class="note"><b>Problem</b><span class="big">20%</span><span class="small">of club fees still unpaid at round 1</span></div>
+          <div class="note"><b>Analysis</b><span class="big">220 hrs</span><span class="small">of volunteer admin a season, traced to 8 pain points</span></div>
+          <div class="note"><b>Requirements</b><span class="big">28 + 19</span><span class="small">requirements and user stories, all traced to tests</span></div>
+          <div class="note"><b>Target</b><span class="big">95%</span><span class="small">of fees paid by round 1, and 140 hours handed back</span></div>
         </div>
-        <p class="foot">Read the full story in <a href="#case-checkout">Checkout conversion uplift</a>.</p>
+        <p class="foot">Read the full story in <a href="#case-club">Club platform for a junior soccer club</a>.</p>
       </figure>
     </div>
   </section>
@@ -215,43 +215,43 @@
       <h2>Case studies</h2>
       <p class="intro">Each one follows a full piece of work end to end, with the real artefacts: business case, process maps, requirements, analysis and test plans. Company names and data are fictional so that no client information is shared.</p>
 
-      <article class="case" id="case-checkout">
+      <article class="case" id="case-club">
         <div>
-          <h3>Checkout conversion uplift</h3>
-          <p class="meta">E-commerce and retail · Discovery through to benefits tracking</p>
+          <h3>Club platform for a junior soccer club</h3>
+          <p class="meta">Community sport · Agency-side BA · Website, admin portal and mobile app</p>
           <dl>
-            <div><dt>The problem</dt><dd>An Australian homewares retailer's online traffic grew 21%, but its revenue grew only 6%. Six in ten customers who started checkout didn't finish, and mobile customers converted 7 points worse than desktop customers.</dd></div>
-            <div><dt>What I did</dt><dd>Ran interviews, a 1,200-person survey and session-replay reviews. I analysed 40,000 sessions in SQL and Python and found four friction points. I sized each one in dollars, then wrote the BRD, user stories and UAT plan for two releases.</dd></div>
-            <div><dt>The trade-off I resolved</dt><dd>The loyalty team feared guest checkout would cut sign-ups. We moved account creation to after purchase, added a points incentive and agreed a guardrail KPI.</dd></div>
+            <div><dt>The problem</dt><dd>A local club for under-14s, with 65 players, 6 teams and only volunteers to run it, managed everything with a spreadsheet, bank transfers and WhatsApp groups. A fifth of fees were unpaid at round 1, and no one could confirm at a glance that every coach had a current Working With Children Check.</dd></div>
+            <div><dt>What I did</dt><dd>I gathered requirements from the committee, coaches and parents, then worked with my company's product manager, architect, designer, developers and testers. Together we are delivering a public website, a committee admin portal, and one app with separate views for parents, coaches and players.</dd></div>
+            <div><dt>The trade-off I resolved</dt><dd>Coaches wanted group chat with older players, but the child-safe policy doesn't allow it. We agreed that messages go to parents only and that players get a view-only profile their parent controls. These rules are now built into the product.</dd></div>
           </dl>
-          <div class="results" aria-label="Targets">
-            <div><strong>40% → 48%</strong>checkout conversion target</div>
-            <div><strong>A$1.35M</strong>extra revenue a year</div>
-            <div><strong>~7 months</strong>payback on A$310K</div>
+          <div class="results" aria-label="Targets for the 2027 season">
+            <div><strong>80% → 95%</strong>fees paid by round 1</div>
+            <div><strong>220 → 80</strong>volunteer admin hours a season</div>
+            <div><strong>100%</strong>coaches with a verified WWCC, enforced</div>
           </div>
-          <a class="btn primary" href="https://github.com/your-username/checkout-optimisation-ba-case-study">View the full case study on GitHub</a>
+          <a class="btn primary" href="https://github.com/your-username/local-soccer-club-platform-ba-case-study">View the full case study on GitHub</a>
         </div>
 
         <div>
           <div class="chart">
-            <h4>Why customers abandoned checkout</h4>
-            <p>Share of 13,944 abandoned checkouts, from Apr–May 2026</p>
+            <h4>Where the volunteer hours went</h4>
+            <p>Admin hours per season, from a 3-week time diary (2026)</p>
             <ul class="bars">
-              <li><span>Forced account</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="pct">36%</span></li>
-              <li><span>Shipping cost</span><span class="track"><span class="fill" style="width:62%"></span></span><span class="pct">22%</span></li>
-              <li><span>Left at payment</span><span class="track"><span class="fill" style="width:55%"></span></span><span class="pct">20%</span></li>
-              <li><span>Address errors</span><span class="track"><span class="fill" style="width:22%"></span></span><span class="pct">8%</span></li>
-              <li><span>Payment errors</span><span class="track"><span class="fill" style="width:16%"></span></span><span class="pct">6%</span></li>
-              <li class="other"><span>Other</span><span class="track"><span class="fill" style="width:22%"></span></span><span class="pct">8%</span></li>
+              <li><span>Coaches (6)</span><span class="track"><span class="fill r2" style="width:100%"></span></span><span class="pct">120</span></li>
+              <li><span>Registrar</span><span class="track"><span class="fill" style="width:33%"></span></span><span class="pct">40</span></li>
+              <li><span>Treasurer</span><span class="track"><span class="fill" style="width:21%"></span></span><span class="pct">25</span></li>
+              <li><span>Website &amp; social</span><span class="track"><span class="fill" style="width:17%"></span></span><span class="pct">20</span></li>
+              <li><span>Duty roster</span><span class="track"><span class="fill r2" style="width:12.5%"></span></span><span class="pct">15</span></li>
             </ul>
-            <div class="legend"><span><i style="background:var(--ink)"></i>Fixed by this project</span><span><i style="background:#B6BDC8"></i>Out of scope</span></div>
+            <div class="legend"><span><i style="background:var(--ink)"></i>Addressed in Release 1 (Nov 2026)</span><span><i style="background:var(--link)"></i>Addressed in Release 2 (Mar 2027)</span></div>
           </div>
           <div class="deliverables">
             <h4>What's in the repo</h4>
             <ul>
-              <li>Business case and ROI</li><li>Stakeholder map and RACI</li><li>As-is and to-be process maps</li>
-              <li>Root cause analysis</li><li>BRD</li><li>User stories with Gherkin</li><li>Traceability matrix</li>
-              <li>SQL and Python analysis</li><li>UAT plan</li><li>Benefits realisation plan</li>
+              <li>Project charter and options</li><li>Stakeholder map and RACI</li><li>Personas and journeys</li>
+              <li>As-is and to-be process maps</li><li>Roles and permissions</li><li>BRD with child-safety rules</li>
+              <li>User stories with Gherkin</li><li>Backlog and traceability</li><li>SQL and Python analysis</li>
+              <li>UAT plan and defects</li><li>Change and benefits plan</li>
             </ul>
           </div>
         </div>
