@@ -152,6 +152,11 @@
   .contact-wide{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
   .contact-wide p{margin:0}
   @media (max-width:920px){.contact-wide{grid-template-columns:1fr}.about-side h3{margin-top:0}}
+  [data-page][hidden]{display:none!important}
+  nav a[aria-current="page"]{background:rgba(255,255,255,.75)}
+  .hero.compact{padding-bottom:1.25rem}
+  .hero.compact::after{display:none}
+  .page-title{padding:4rem 0 0}
   footer{padding:0 0 2.5rem;color:var(--muted);font-size:.9rem}
 
   @media (max-width:920px){
@@ -175,16 +180,16 @@
 <div class="hero">
   <header>
     <div class="wrap">
-      <a class="brand" href="#top">Maaz Sharieff</a>
+      <a class="brand" href="#home">Maaz Sharieff</a>
       <nav aria-label="Main"><ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#approach">Approach</a></li>
+        <li><a href="#home" data-nav="home">Home</a></li>
+        <li><a href="#approach" data-nav="approach">Approach</a></li>
+        <li><a href="#contact" data-nav="contact">Contact</a></li>
       </ul></nav>
     </div>
   </header>
 
-  <div class="wrap hero-grid" id="top">
+  <div class="wrap hero-grid" id="top" data-page="home">
     <div>
       <span class="badge"><i></i>Open to BA roles in Melbourne</span>
       <h1>I turn messy problems into things people love using.</h1>
@@ -258,7 +263,7 @@
 </div>
 
 <main id="main">
-  <section id="about">
+  <section id="about" data-page="home">
     <div class="wrap about">
       <div>
         <p class="kicker">About</p>
@@ -273,7 +278,7 @@
     </div>
   </section>
 
-  <section id="work" style="padding-top:0">
+  <section id="work" data-page="home" style="padding-top:0">
     <div class="wrap">
       <p class="kicker">Featured work</p>
       <h2>A website and app for a local junior soccer club</h2>
@@ -307,7 +312,7 @@
     </div>
   </section>
 
-  <section id="approach" style="padding-top:0">
+  <section id="approach" data-page="approach">
     <div class="wrap">
       <p class="kicker">Approach</p>
       <h2>How I work</h2>
@@ -342,7 +347,7 @@
     </div>
   </section>
 
-  <section id="contact-sec" style="padding-top:0">
+  <section id="contact-sec" data-page="contact">
     <div class="wrap">
       <div class="contact contact-wide" id="contact">
         <div><h2>Let's talk</h2>
@@ -402,6 +407,19 @@ document.querySelectorAll('.switch button').forEach(b=>b.addEventListener('click
   stats.classList.toggle('after',mode==='after');
   stats.querySelectorAll('strong').forEach(s=>s.textContent=s.dataset[mode]);
 }));
+
+// Simple pages: Home, Approach, Contact (routed on the #hash)
+const PAGE_OF={home:'home',top:'home',about:'home',work:'home',approach:'approach',contact:'contact'};
+function route(){
+  const h=(location.hash||'#home').slice(1); if(h==='main')return;
+  const page=PAGE_OF[h]||'home';
+  document.querySelectorAll('[data-page]').forEach(el=>el.hidden=el.dataset.page!==page);
+  document.querySelector('.hero').classList.toggle('compact',page!=='home');
+  document.querySelectorAll('[data-nav]').forEach(a=>a.dataset.nav===page?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+  const target=(h==='about'||h==='work')?document.getElementById(h):null;
+  if(target){target.scrollIntoView();}else{window.scrollTo(0,0);}
+}
+window.addEventListener('hashchange',route);route();
 
 // Copy email
 const copy=document.getElementById('copy');
